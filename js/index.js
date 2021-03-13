@@ -141,24 +141,51 @@ function renderButtons() {
   } else{
     btn.classList.remove('active')
   }
-
-
 }
 
 function renderPrice() {
-//   // Iteration 4: change the HTML of `<aside class="panel price">`
-//   let ingredientList = document.querySelector('.panel.price ul');
-//   while(ingredientList.hasChildNodes()){
-//     ingredientList.removeChild(childNodes[0]);
-//   }
-//   console.log(ingredientList);
-//   console.log(state);
-//   //boucle sur objet state
-//   for (const property in state) {
-//     console.log(`${property}: ${state[property]}`);
-//     //si property = true => afficher nom + prix dans la liste
+  // Iteration 4: change the HTML of `<aside class="panel price">`
+  let ingredientList = document.querySelector('.panel.price ul');
+  let sum = 10;
+  //pour le pepperoni
+  if (state.pepperoni){
+    ingredientList.children[0].style.textDecoration = "none";
+    sum += ingredients.pepperoni.price;
+  } else{
+    ingredientList.children[0].style.textDecoration = "line-through";
+  }
 
-//   }
+  //pour le Mushroom
+  if (state.mushrooms){
+    ingredientList.children[1].style.textDecoration = "none";
+    sum += ingredients.mushrooms.price;
+  } else{
+    ingredientList.children[1].style.textDecoration = "line-through";
+  }
+
+  //pour le green pepper
+  if (state.greenPeppers){
+    ingredientList.children[2].style.textDecoration = "none";
+    sum += ingredients.greenPeppers.price;
+  } else{
+    ingredientList.children[2].style.textDecoration = "line-through";
+  }
+  //pour white sauce
+  if (state.whiteSauce){
+    ingredientList.children[3].style.textDecoration = "none";
+    sum += ingredients.whiteSauce.price;
+  } else{
+    ingredientList.children[3].style.textDecoration = "line-through";
+  }
+  //pour crust
+  if (state.glutenFreeCrust){
+    ingredientList.children[4].style.textDecoration = "none";
+    sum += ingredients.glutenFreeCrust.price;
+  } else{
+    ingredientList.children[4].style.textDecoration = "line-through";
+  }
+  document.querySelector('.panel.price strong').innerHTML = "$"+sum;
+  console.log(sum)
 }
 
 renderEverything();
