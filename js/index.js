@@ -91,10 +91,74 @@ function renderGlutenFreeCrust() {
 
 function renderButtons() {
   // Iteration 3: add/remove the class "active" of each `<button class="btn">`
+  // document.querySelectorAll('.btn').forEach(btn => {
+  //   console.log(btn);
+  //   console.log("classname:",btn.className)
+  //   if (btn.className.indexOf("active") !== -1) {      
+  //     btn.classList.remove("active");
+  //   } else {
+  //     btn.classList.add("active");
+  //   }
+  // });
+
+  let btn;
+  // pour le btn pepperoni
+  btn = document.querySelector('.btn.btn-pepperoni');
+  if (state.pepperoni){
+    btn.classList.add('active')
+  } else{
+    btn.classList.remove('active')
+  }
+
+  // pour le btn mushroom
+  btn = document.querySelector('.btn.btn-mushrooms');
+  if (state.mushrooms){
+    btn.classList.add('active')
+  } else{
+    btn.classList.remove('active')
+  }
+
+  // pour le btn green peppers
+  btn = document.querySelector('.btn.btn-green-peppers');
+  if (state.greenPeppers){
+    btn.classList.add('active')
+  } else{
+    btn.classList.remove('active')
+  }
+
+  // pour le btn white sauce
+  btn = document.querySelector('.btn.btn-sauce');
+  if (state.whiteSauce){
+    btn.classList.add('active')
+  } else{
+    btn.classList.remove('active')
+  }
+
+  // pour le btn crust
+  btn = document.querySelector('.btn.btn-crust');
+  if (state.glutenFreeCrust){
+    btn.classList.add('active')
+  } else{
+    btn.classList.remove('active')
+  }
+
+
 }
 
 function renderPrice() {
-  // Iteration 4: change the HTML of `<aside class="panel price">`
+//   // Iteration 4: change the HTML of `<aside class="panel price">`
+//   let ingredientList = document.querySelector('.panel.price ul');
+//   while(ingredientList.hasChildNodes()){
+//     ingredientList.removeChild(childNodes[0]);
+//   }
+//   console.log(ingredientList);
+//   console.log(state);
+//   //boucle sur objet state
+//   for (const property in state) {
+//     console.log(`${property}: ${state[property]}`);
+//     //si property = true => afficher nom + prix dans la liste
+
+//   }
 }
 
 renderEverything();
